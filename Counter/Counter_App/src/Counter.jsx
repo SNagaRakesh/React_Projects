@@ -1,18 +1,30 @@
 import React, {useState} from 'react';
+import './Counter.css';
+
 
 function Counter() {
 
-    const [count, SetCount] = useState(0);
+    const [count, setCount] = useState(0);
 
     const increaseCount = () => {
-        SetCount(c => c + 1);
+        setCount(c => c + 1);
+    }
+    
+    const decementCount = () => {
+        setCount(c => c - 1);
+    }
+
+    const resetCount = () => {
+        setCount(0);
     }
 
     return (
-        <div>
-            <p>Count:{count}</p>
-            <button onClick={() => increaseCount}>Increace</button>
-        </div>
+        <>
+            <p className='count'>{count}</p>
+            <button className='buttons' onClick={increaseCount}>+</button>
+            <button className='buttons' onClick={resetCount}>0</button>
+            <button className='buttons' onClick={decementCount}>-</button>
+        </>
     );
 }
 

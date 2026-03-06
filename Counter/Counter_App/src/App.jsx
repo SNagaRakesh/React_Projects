@@ -1,8 +1,12 @@
-import Counter from './Counter.jsx';
+import Counter from './Counter';
 
 function App() {
-  (
-    <Counter/>
+return  (
+  <div className='page'>
+    <div className='card'>
+      <Counter />
+    </div>
+  </div>
   );
 }
 
